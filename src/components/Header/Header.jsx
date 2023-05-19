@@ -106,14 +106,14 @@ const Header = () => {
               </div>
             </div>
 
-            <div className="nav__right">
+            {/* <div className="nav__right">
               <div className="search__box">
                 <input type="text" placeholder="Search" />
                 <span>
                   <i class="ri-search-line"></i>
                 </span>
               </div>
-            </div>
+            </div> */}
           </div>
         </Container>
       </div>
