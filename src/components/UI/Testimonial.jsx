@@ -3,10 +3,10 @@ import Slider from "react-slick";
 
 import "../../styles/testimonial.css";
 
-import ava01 from "../../assets/all-images/ava-1.jpg";
-import ava02 from "../../assets/all-images/ava-2.jpg";
-import ava03 from "../../assets/all-images/ava-3.jpg";
-import ava04 from "../../assets/all-images/ava-4.jpg";
+import ava01 from "../../assets/all-images/testimonial-img/ava-1.jpg";
+import ava02 from "../../assets/all-images/testimonial-img/ava-2.jpg";
+import ava03 from "../../assets/all-images/testimonial-img/ava-3.jpg";
+import ava04 from "../../assets/all-images/testimonial-img/ava-4.jpg";
 
 const Testimonial = () => {
   const settings = {
@@ -53,7 +53,7 @@ const Testimonial = () => {
 
           <div>
             <h6 className="mb-0 mt-3">Jhon Doe</h6>
-            <p className="section__description">Customer</p>
+            <p className="section__description">email</p>
           </div>
         </div>
       </div>
@@ -71,7 +71,7 @@ const Testimonial = () => {
 
           <div>
             <h6 className="mb-0 mt-3">Jhon Doe</h6>
-            <p className="section__description">Customer</p>
+            <p className="section__description">email</p>
           </div>
         </div>
       </div>
@@ -89,7 +89,7 @@ const Testimonial = () => {
 
           <div>
             <h6 className="mb-0 mt-3">Jhon Doe</h6>
-            <p className="section__description">Customer</p>
+            <p className="section__description">email</p>
           </div>
         </div>
       </div>
@@ -107,7 +107,7 @@ const Testimonial = () => {
 
           <div>
             <h6 className="mb-0 mt-3">Jhon Doe</h6>
-            <p className="section__description">Customer</p>
+            <p className="section__description">email</p>
           </div>
         </div>
       </div>

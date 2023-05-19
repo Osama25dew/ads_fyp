@@ -31,7 +31,7 @@ const Home = () => {
               </Col>
 
               <Col lg="8" md="8" sm="12">
-                <FindCarForm />
+                {/* <FindCarForm /> */}
               </Col>
             </Row>
           </Container>
@@ -68,7 +68,7 @@ const Home = () => {
         </Container>
       </section>
       {/* =========== become a driver section ============ */}
-      <BecomeDriverSection />
+      {/*<BecomeDriverSection />*/}
 
       {/* =========== testimonial section =========== */}
       <section>
