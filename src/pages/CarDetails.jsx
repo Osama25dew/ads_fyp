@@ -27,25 +27,20 @@ const CarDetails = () => {
 
             <Col lg="6">
               <div className="car__info">
-                <h2 className="section__title">{singleCarItem.carName}</h2>
+              <h2 style={{fontWeight:"bold"}}>{singleCarItem.brand}</h2>
+                <h3 className="section__title">{singleCarItem.carName}</h3>
 
                 <div className=" d-flex align-items-center gap-5 mb-4 mt-3">
                   <h6 className="rent__price fw-bold fs-4">
-                    ${singleCarItem.price}.00 / Day
+                    Rs.{singleCarItem.price}.00
                   </h6>
 
                   <span className=" d-flex align-items-center gap-2">
-                    <span style={{ color: "#f9a826" }}>
-                      <i class="ri-star-s-fill"></i>
-                      <i class="ri-star-s-fill"></i>
-                      <i class="ri-star-s-fill"></i>
-                      <i class="ri-star-s-fill"></i>
-                      <i class="ri-star-s-fill"></i>
-                    </span>
-                    ({singleCarItem.rating} ratings)
+                    ({singleCarItem.status})
                   </span>
                 </div>
 
+                <h6 className="rent__price fs-4">Description</h6>
                 <p className="section__description">
                   {singleCarItem.description}
                 </p>
@@ -56,10 +51,17 @@ const CarDetails = () => {
                 >
                   <span className=" d-flex align-items-center gap-1 section__description">
                     <i
+                      class="ri-building-2-line"
+                      style={{ color: "#f9a826" }}
+                    ></i>{" "}
+                    {singleCarItem.registrationNo}
+                  </span>
+                  <span className=" d-flex align-items-center gap-1 section__description">
+                    <i
                       class="ri-roadster-line"
                       style={{ color: "#f9a826" }}
                     ></i>{" "}
-                    {singleCarItem.model}
+                    {singleCarItem.speed}
                   </span>
 
                   <span className=" d-flex align-items-center gap-1 section__description">
@@ -76,6 +78,14 @@ const CarDetails = () => {
                       style={{ color: "#f9a826" }}
                     ></i>{" "}
                     {singleCarItem.speed}
+                  </span>
+
+                  <span className=" d-flex align-items-center gap-1 section__description">
+                    <i
+                      class="ri-settings-2-line"
+                      style={{ color: "#f9a826" }}
+                    ></i>{" "}
+                    {singleCarItem.engineCapacity} cc
                   </span>
                 </div>
 
@@ -96,13 +106,6 @@ const CarDetails = () => {
                     {singleCarItem.seatType}
                   </span>
 
-                  <span className=" d-flex align-items-center gap-1 section__description">
-                    <i
-                      class="ri-building-2-line"
-                      style={{ color: "#f9a826" }}
-                    ></i>{" "}
-                    {singleCarItem.brand}
-                  </span>
                 </div>
               </div>
             </Col>

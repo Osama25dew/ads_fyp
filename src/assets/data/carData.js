@@ -12,7 +12,6 @@ const carData = [
   {
     id: 1,
     brand: "Tesla",
-    rating: 112,
     carName: "Tesla Malibu",
     imgUrl: img01,
     status: "New",
@@ -23,12 +22,13 @@ const carData = [
     automatic: "Automatic",
     description:
       " Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam. Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam.",
+    registrationNo:33434,
+    engineCapacity:660
   },
 
   {
     id: 2,
     brand: "Toyota",
-    rating: 102,
     carName: "Toyota Aventador",
     imgUrl: img02,
     status: "Old",
@@ -39,12 +39,13 @@ const carData = [
     automatic: "Automatic",
     description:
       " Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam. Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam.",
-  },
+      registrationNo:33434,
+      engineCapacity:660
+    },
 
   {
     id: 3,
     brand: "BMW",
-    rating: 132,
     carName: "BMW X3",
     imgUrl: img03,
     status: "New",
@@ -55,12 +56,13 @@ const carData = [
     automatic: "Automatic",
     description:
       " Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam. Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam.",
-  },
+      registrationNo:33434,
+      engineCapacity:660
+    },
 
   {
     id: 4,
     brand: "Nissan",
-    rating: 102,
     carName: "Nissan Mercielago",
     imgUrl: img04,
     status: "Old",
@@ -71,11 +73,12 @@ const carData = [
     automatic: "Automatic",
     description:
       " Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam. Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam.",
-  },
+      registrationNo:33434,
+      engineCapacity:660
+    },
   {
     id: 5,
     brand: "Tesla",
-    rating: 11233,
     carName: "Tesla M",
     imgUrl: img01,
     status: "New",
@@ -86,7 +89,9 @@ const carData = [
     automatic: "Automatic",
     description:
       " Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam. Dolor labore lorem no accusam sit justo sadipscing labore invidunt voluptua, amet duo et gubergren vero gubergren dolor. At diam.",
-  },
+      registrationNo:33434,
+      engineCapacity:660
+    },
 ];
 
 export default carData;
