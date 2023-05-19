@@ -5,14 +5,33 @@ import CommonSection from "../components/UI/CommonSection";
 import CarItem from "../components/UI/CarItem";
 import carData from "../assets/data/carData";
 
-import { useState } from "react";
+import { useState} from "react";
 import "../styles/find-car-form.css";
 import "../styles/find-car-form.css";
 import { Form, FormGroup } from "reactstrap";
 
 const CarListing = () => {
   const [searchTermCompany,setSearchTermCompany]=useState("")
+  const [selectCompany,setSelectCompany]=useState("")
   const [searchTermModel,setSearchTermModel]=useState("")
+  const [selectModel,setSelectModel]=useState("")
+  const [minPrice, setMinPrice] = useState("");
+  const [maxPrice, setMaxPrice] = useState("");
+
+  const handleSelectCompany = (event) => {
+    const selectedCompany = event.target.value;
+    setSelectCompany(selectedCompany);
+    setSearchTermModel(""); // Clear the model search term
+  };
+
+  const handlePriceFilter = (event) => {
+    const { name, value } = event.target;
+    if (name === "minPrice") {
+      setMinPrice(value);
+    } else if (name === "maxPrice") {
+      setMaxPrice(value);
+    }
+  };
   return (
     <Helmet title="Cars">
       <CommonSection title="Car Listing" />
@@ -42,15 +61,48 @@ const CarListing = () => {
                   </FormGroup>
 
                   <FormGroup className="select__group">
-                    <select>
-                      <option value="ac">AC Car</option>
-                      <option value="non-ac">Non AC Car</option>
+                    <select onChange={handleSelectCompany}>
+                      <option value="">Select Company</option>
+                      {carData.map((item)=>{
+                        return <option key={item.id} >{item.brand}</option>
+                      })}
                     </select>
                   </FormGroup>
 
                   <FormGroup className="form__group">
-                    <button className="btn find__car-btn">Find Car</button>
-                  </FormGroup>
+                      <input
+                        type="number"
+                        placeholder="Min Price"
+                        name="minPrice"
+                        value={minPrice}
+                        onChange={handlePriceFilter}
+                      />
+                    </FormGroup>
+
+                    <FormGroup className="form__group">
+                      <input
+                        type="number"
+                        placeholder="Max Price"
+                        name="maxPrice"
+                        value={maxPrice}
+                        onChange={handlePriceFilter}
+                      />
+                    </FormGroup>
+                  {/* <FormGroup className="select__group">
+                    <select onChange={(event)=>{setSelectModel(event.target.value)}}>
+                      <option value="">Select Model</option>
+                      {carData
+                          .filter(
+                            (item) =>
+                              item.brand.toLowerCase() ===
+                              selectCompany.toLowerCase()
+                          )
+                          .map((item) => (
+                            <option key={item.id}>{item.carName}</option>
+                          ))}
+                    </select>
+                  </FormGroup> */}
+
                 </div>
               </Form>
               </Col>
@@ -68,15 +120,22 @@ const CarListing = () => {
             .filter((item) => {
               const companyMatch = item.brand.toLowerCase().includes(searchTermCompany.toLowerCase());
               const modelMatch = item.carName.toLowerCase().includes(searchTermModel.toLowerCase());
-              if (searchTermCompany === "" && searchTermModel === "") {
-                return true; // Include all items when the searchTerm is empty
-              } else if (searchTermCompany==="") {
-                return modelMatch; // Include items that match the search term
-              }else if (searchTermModel==="") {
-                return companyMatch; // Include items that match the search term
-              }else{
-                return companyMatch && modelMatch;
-              } // Exclude items that don't match the search term
+              const selectCompanyMatch = item.brand.toLowerCase().includes(selectCompany.toLowerCase());
+              const priceMatch =
+              (minPrice === "" || item.price >= minPrice) &&
+              (maxPrice === "" || item.price <= maxPrice);
+
+              if (
+                searchTermCompany === "" &&
+                searchTermModel === "" &&
+                selectCompany === "" &&
+                minPrice === "" &&
+                maxPrice === ""
+              ) {
+                return true; // Include all items when no filters are applied
+              } else {
+                return companyMatch && modelMatch && priceMatch && selectCompanyMatch;
+              }
             })
             .map((item) => (
               <CarItem item={item} key={item.id} />
